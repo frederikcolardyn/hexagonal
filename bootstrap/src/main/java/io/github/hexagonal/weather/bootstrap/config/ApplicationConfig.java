@@ -1,7 +1,10 @@
 package io.github.hexagonal.weather.bootstrap.config;
 
+import io.github.hexagonal.weather.application.port.in.GetLocationRecommendationsUseCase;
 import io.github.hexagonal.weather.application.port.in.GetWeatherUseCase;
+import io.github.hexagonal.weather.application.port.out.LocationRecommendationProvider;
 import io.github.hexagonal.weather.application.port.out.WeatherProvider;
+import io.github.hexagonal.weather.application.service.LocationRecommendationService;
 import io.github.hexagonal.weather.application.service.WeatherService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
@@ -24,5 +27,16 @@ public class ApplicationConfig {
     @ApplicationScoped
     public GetWeatherUseCase getWeatherUseCase(WeatherProvider weatherProvider) {
         return new WeatherService(weatherProvider);
+    }
+
+    /**
+     * Produces the GetLocationRecommendationsUseCase bean.
+     */
+    @Produces
+    @ApplicationScoped
+    public GetLocationRecommendationsUseCase getLocationRecommendationsUseCase(
+        LocationRecommendationProvider provider
+    ) {
+        return new LocationRecommendationService(provider);
     }
 }
