@@ -24,6 +24,11 @@
             <groupId>io.github.hexagonal</groupId>
             <artifactId>application</artifactId>
         </dependency>
+        <!-- VIOLATION: Adapter depending on another adapter -->
+        <dependency>
+            <groupId>io.github.hexagonal</groupId>
+            <artifactId>adapter-openmeteo</artifactId>
+        </dependency>
 
         <!-- Quarkus REST -->
         <dependency>
