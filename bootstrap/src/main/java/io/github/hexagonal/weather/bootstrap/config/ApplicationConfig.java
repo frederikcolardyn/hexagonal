@@ -1,7 +1,10 @@
 package io.github.hexagonal.weather.bootstrap.config;
 
 import io.github.hexagonal.weather.application.port.in.GetWeatherUseCase;
+import io.github.hexagonal.weather.application.port.in.ManageUserPreferencesUseCase;
+import io.github.hexagonal.weather.application.port.out.UserPreferencesRepository;
 import io.github.hexagonal.weather.application.port.out.WeatherProvider;
+import io.github.hexagonal.weather.application.service.UserPreferencesService;
 import io.github.hexagonal.weather.application.service.WeatherService;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Produces;
@@ -24,5 +27,14 @@ public class ApplicationConfig {
     @ApplicationScoped
     public GetWeatherUseCase getWeatherUseCase(WeatherProvider weatherProvider) {
         return new WeatherService(weatherProvider);
+    }
+
+    /**
+     * Produces the ManageUserPreferencesUseCase bean.
+     */
+    @Produces
+    @ApplicationScoped
+    public ManageUserPreferencesUseCase manageUserPreferencesUseCase(UserPreferencesRepository repository) {
+        return new UserPreferencesService(repository);
     }
 }
