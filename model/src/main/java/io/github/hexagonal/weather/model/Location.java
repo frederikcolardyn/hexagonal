@@ -1,5 +1,6 @@
 package io.github.hexagonal.weather.model;
 
+import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
@@ -11,6 +12,7 @@ import jakarta.validation.constraints.NotBlank;
  * @param longitude Longitude coordinate (-180 to 180)
  * @param cityName  Optional city name for display purposes
  */
+@Embeddable
 public record Location(
     @Min(-90) @Max(90) double latitude,
     @Min(-180) @Max(180) double longitude,
