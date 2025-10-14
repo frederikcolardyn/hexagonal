@@ -34,6 +34,12 @@
             <artifactId>jboss-logging</artifactId>
         </dependency>
 
+        <!-- CDI for dependency injection -->
+        <dependency>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+        </dependency>
+
         <!-- Testing -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
