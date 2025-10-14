@@ -32,6 +32,10 @@
             <groupId>io.github.hexagonal</groupId>
             <artifactId>adapter-openmeteo</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.hexagonal</groupId>
+            <artifactId>adapter-preferences</artifactId>
+        </dependency>
 
         <!-- Quarkus extensions -->
         <dependency>

@@ -18,5 +18,6 @@
     <modules>
         <module>adapter-rest</module>
         <module>adapter-openmeteo</module>
+        <module>adapter-preferences</module>
     </modules>
 </project>
