@@ -67,6 +67,11 @@
                 <artifactId>adapter-openmeteo</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>io.github.hexagonal</groupId>
+                <artifactId>adapter-preferences</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <!-- Lombok -->
             <dependency>

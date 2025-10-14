@@ -6,55 +6,31 @@
 
     <parent>
         <groupId>io.github.hexagonal</groupId>
-        <artifactId>weather-service</artifactId>
+        <artifactId>adapter</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>application</artifactId>
-    <name>Weather Service - Application</name>
-    <description>Use cases, ports, and service orchestrators</description>
+    <artifactId>adapter-preferences</artifactId>
+    <name>Weather Service - Preferences Adapter</name>
+    <description>In-memory user preferences repository</description>
 
     <dependencies>
-        <!-- Internal dependency -->
+        <!-- Application layer (ports) -->
+        <dependency>
+            <groupId>io.github.hexagonal</groupId>
+            <artifactId>application</artifactId>
+        </dependency>
+
+        <!-- Model layer (domain) -->
         <dependency>
             <groupId>io.github.hexagonal</groupId>
             <artifactId>model</artifactId>
-        </dependency>
-
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-
-        <!-- JBoss Logging API -->
-        <dependency>
-            <groupId>org.jboss.logging</groupId>
-            <artifactId>jboss-logging</artifactId>
         </dependency>
 
         <!-- CDI for dependency injection -->
         <dependency>
             <groupId>jakarta.enterprise</groupId>
             <artifactId>jakarta.enterprise.cdi-api</artifactId>
-        </dependency>
-
-        <!-- Testing -->
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
